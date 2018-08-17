@@ -15,8 +15,8 @@ unset IP; for i in `seq 4`; do IP=$IP.$(od -An -N1 -i /dev/random); done ; echo 
 mkdir $DIR2 2>/dev/null
 for i in {1..200}; do mktemp -dqp $DIR2 XXXXXXX >/dev/null; for i in {1..20};do mktemp -qp $DIR2 XXXXXXXXX >/dev/null;done; done
 
-# Criando arquivos maiores que 100M e 10M
-for i in {1..5}; do fallocate -l 110000000 $(mktemp -qp $DIR2 XXXXXXXX.avi); for i in {1..50}; do fallocate -l 11000000 $(mktemp -qp $DIR2 XXXXXXXXX.jpg); done; done
+# Criando arquivos maiores que 10M e 1M
+for i in {1..5}; do fallocate -l 11000000 $(mktemp -qp $DIR2 XXXXXXXX.avi); for i in {1..50}; do fallocate -l 1100000 $(mktemp -qp $DIR2 XXXXXXXXX.jpg); done; done
 
 # Alterando data de alguns arquivos
 DATA1=20180401
