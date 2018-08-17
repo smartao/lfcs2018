@@ -30,9 +30,12 @@ echo 'saida normal'
 ocorreu um erro" > $DIR1/scriptstd.sh
 chmod 755 $DIR1/scriptstd.sh
 
-## Topico ##
+## Topico 6 ##
+cp /etc/passwd /tmp/
+cp /etc/group /tmp/
 
-# task 7
+# Topico 7 ##
+
 
 # task 8
 
