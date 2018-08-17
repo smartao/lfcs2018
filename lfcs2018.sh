@@ -12,7 +12,8 @@ unset IP; for i in `seq 4`; do IP=$IP.$(od -An -N1 -i /dev/random); done ; echo 
 
 ## Topicos 2 e 4 ##
 # Criando arquivos e diretorios
-for i in {1..100}; do mktemp -dqp $DIR2 >/dev/null; for i in {1..20};do mktemp -qp $DIR2 > /dev/null ;done; done
+mkdir $DIR2 2>/dev/null
+for i in {1..200}; do mktemp -dqp $DIR2 XXXXXXXX >/dev/null; for i in {1..20};do mktemp -qp $DIR2 XXXXXXXX > /dev/null ;done; done
 # Criando arquivos maiores que 10M e 100M
 for i in {1..5}; do fallocate -l 110000000 $(mktemp -qp $DIR2); for i in {1..50}; do fallocate -l 11000000 $(mktemp -qp $DIR2); done; done
 
