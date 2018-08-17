@@ -13,9 +13,16 @@ unset IP; for i in `seq 4`; do IP=$IP.$(od -An -N1 -i /dev/random); done ; echo 
 ## Topicos 2 e 4 ##
 # Criando arquivos e diretorios
 mkdir $DIR2 2>/dev/null
-for i in {1..200}; do mktemp -dqp $DIR2 XXXXXXXX >/dev/null; for i in {1..20};do mktemp -qp $DIR2 XXXXXXXX > /dev/null ;done; done
+for i in {1..200}; do mktemp -dqp $DIR2 XXXXXXX >/dev/null; for i in {1..20};do mktemp -qp $DIR2 XXXXXXXXX >/dev/null;done; done
+
 # Criando arquivos maiores que 10M e 100M
-for i in {1..5}; do fallocate -l 110000000 $(mktemp -qp $DIR2); for i in {1..50}; do fallocate -l 11000000 $(mktemp -qp $DIR2); done; done
+for i in {1..5}; do fallocate -l 110000000 $(mktemp -qp $DIR2 XXXXXXXX); for i in {1..50}; do fallocate -l 11000000 $(mktemp -qp $DIR2 XXXXXXXXX); done; done
+
+# Alterando data de alguns arquivos
+DATA1=20180401
+DATA2=20180701
+touch -d $DATA1 $DIR2/$(pwgen -s 1 1)*
+touch -d $DATA2 $DIR2/$(pwgen -s 1 1)*
 
 ## Topico 5 ##
 echo "#!/bin/bash
