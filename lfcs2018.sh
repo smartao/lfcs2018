@@ -4,6 +4,9 @@
 DIR1="/tmp"
 DIR2="$DIR1/files"
 
+### Limpando diretorio /tmp ###
+rm -rf $DIR1/*
+
 ### Essential Commands ###
 ## Topico 1 ##
 # Gerando IP randomico
@@ -25,22 +28,35 @@ touch -d $DATA1 $DIR2/$(pwgen -s 1 1)*
 touch -d $DATA2 $DIR2/$(pwgen -s 1 1)*
 
 ## Topico 5 ##
+# Gerando script para redirecionar saida
 echo "#!/bin/bash
 echo 'saida normal'
 ocorreu um erro" > $DIR1/scriptstd.sh
 chmod 755 $DIR1/scriptstd.sh
 
 ## Topico 6 ##
+# Copiando arquivos para pesquisa
 cp /etc/passwd /tmp/
 cp /etc/group /tmp/
 
-# Topico 7 ##
+## Topico 07 ##
+# Compactando arquivos 
+tar -cf $DIR1/$(pwgen -s 10 1).tar $DIR2/$(pwgen -s 1 1)* 2>/dev/null 		# .tar
+tar -czf $DIR1/$(pwgen -s 10 1).tar.gz $DIR2/$(pwgen -s 1 1)* 2>/dev/null 	# .tar.gz
+tar -cjf $DIR1/$(pwgen -s 10 1).tar.bz2 $DIR2/$(pwgen -s 1 1)* 2>/dev/nul	# .tar.bz2
+tar -cJf $DIR1/$(pwgen -s 10 1).tar.xz $DIR2/$(pwgen -s 1 1)* 2>/dev/null	# .tar.xz
+
+## Topico 08 ##
 
 
-# task 8
+## Topico 09 ##
 
-# task 9
 
-# task 10
+## Topico 10 ##
+
 
 ### Operation of Running Systems ###
+
+## Topico 01 ##
+
+
