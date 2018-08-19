@@ -3,6 +3,7 @@
 ### Varivais ###
 DIR1="/tmp"
 DIR2="$DIR1/files"
+RNAMES="/usr/local/bin/random_users"
 
 ### Limpando diretorio /tmp ###
 rm -rf $DIR1/*
@@ -41,10 +42,10 @@ cp /etc/group /tmp/
 
 ## Topico 07 ##
 # Compactando arquivos 
-tar -cf $DIR1/$(pwgen -s 10 1).tar $DIR2/$(pwgen -s 1 1)* 2>/dev/null 		# .tar
-tar -czf $DIR1/$(pwgen -s 10 1).tar.gz $DIR2/$(pwgen -s 1 1)* 2>/dev/null 	# .tar.gz
-tar -cjf $DIR1/$(pwgen -s 10 1).tar.bz2 $DIR2/$(pwgen -s 1 1)* 2>/dev/null	# .tar.bz2
-tar -cJf $DIR1/$(pwgen -s 10 1).tar.xz $DIR2/$(pwgen -s 1 1)* 2>/dev/null	# .tar.xz
+tar -cf $DIR1/"$(shuf -n 1 $RNAMES).tar" $DIR2/$(pwgen -s 1 1)* 2>/dev/null 		# .tar
+tar -czf $DIR1/"$(shuf -n 1 $RNAMES).tar.gz" $DIR2/$(pwgen -s 1 1)* 2>/dev/null 	# .tar.gz
+tar -cjf $DIR1/"$(shuf -n 1 $RNAMES).tar.bz2" $DIR2/$(pwgen -s 1 1)* 2>/dev/null	# .tar.bz2
+tar -cJf $DIR1/"$(shuf -n 1 $RNAMES).tar.xz" $DIR2/$(pwgen -s 1 1)* 2>/dev/null	# .tar.xz
 
 ## Topico 08 ##
 
