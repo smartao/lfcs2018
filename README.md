@@ -11,4 +11,5 @@ Pacote instalado
 
 ```
 pwgen
+wbritish
 ```
