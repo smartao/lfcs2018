@@ -35,10 +35,17 @@ echo 'saida normal'
 ocorreu um erro" > $DIR1/scriptstd.sh
 chmod 755 $DIR1/scriptstd.sh
 
-## Topico 6 ##
+## Topico 6 e 2 ##
 # Copiando arquivos para pesquisa
 cp /etc/passwd /tmp/
 cp /etc/group /tmp/
+
+# Gerando link para fazer pesquisa com o find
+DIR3=/tmp/links
+mkdir $DIR3 2>/dev/null
+for i in {1..5}; do ln /tmp/passwd $DIR3/file$(shuf -i1-500 -n1);done
+for i in {1..5}; do ln /tmp/group $DIR3/file$(shuf -i1-500 -n1);done
+for i in {1..5}; do ln -s -f /tmp/passwd $DIR3/file$(shuf -i1-500 -n1);done
 
 ## Topico 07 ##
 # Compactando arquivos 
@@ -48,7 +55,7 @@ tar -cjf $DIR1/"$(shuf -n 1 $RNAMES).tar.bz2" $DIR2/$(pwgen -s 1 1)* 2>/dev/null
 tar -cJf $DIR1/"$(shuf -n 1 $RNAMES).tar.xz" $DIR2/$(pwgen -s 1 1)* 2>/dev/null	    # .tar.xz
 
 ## Topico 08 ##
-
+# Tarefas manuais
 
 ## Topico 09 ##
 
