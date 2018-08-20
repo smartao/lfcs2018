@@ -1,6 +1,6 @@
 #!/bin/bash
 
-### Varivais ###
+##### Varivais #####
 DIR1="/tmp"
 DIR2="$DIR1/files"
 RNAMES="/usr/local/bin/random_users"
@@ -41,27 +41,36 @@ cp /etc/passwd /tmp/
 cp /etc/group /tmp/
 
 # Gerando link para fazer pesquisa com o find
-DIR3=/tmp/links
+DIR3=$DIR1/links
 mkdir $DIR3 2>/dev/null
-for i in {1..5}; do ln /tmp/passwd $DIR3/file$(shuf -i1-500 -n1);done
-for i in {1..5}; do ln /tmp/group $DIR3/file$(shuf -i1-500 -n1);done
-for i in {1..5}; do ln -s -f /tmp/passwd $DIR3/file$(shuf -i1-500 -n1);done
+for i in {1..5}; do ln /tmp/passwd $DIR3/file$(shuf -i1-500 -n1) 2>/dev/null;done
+for i in {1..5}; do ln /tmp/group $DIR3/file$(shuf -i1-500 -n1) 2>/dev/null;done
+for i in {1..5}; do ln -s -f /tmp/passwd $DIR3/file$(shuf -i1-500 -n1) 2>/dev/null;done
 
 ## Topico 07 ##
 # Compactando arquivos 
-tar -cf $DIR1/"$(shuf -n 1 $RNAMES).tar" $DIR2/$(pwgen -s 1 1)* 2>/dev/null 		# .tar
-tar -czf $DIR1/"$(shuf -n 1 $RNAMES).tar.gz" $DIR2/$(pwgen -s 1 1)* 2>/dev/null 	# .tar.gz
-tar -cjf $DIR1/"$(shuf -n 1 $RNAMES).tar.bz2" $DIR2/$(pwgen -s 1 1)* 2>/dev/null	# .tar.bz2
-tar -cJf $DIR1/"$(shuf -n 1 $RNAMES).tar.xz" $DIR2/$(pwgen -s 1 1)* 2>/dev/null	    # .tar.xz
+DIR4=$DIR1/compactfiles
+mkdir $DIR4 2>/dev/null
+tar -cf $DIR4/"$(shuf -n 1 $RNAMES).tar" $DIR2/$(pwgen -s 1 1)* 2>/dev/null 		# .tar
+tar -czf $DIR4/"$(shuf -n 1 $RNAMES).tar.gz" $DIR2/$(pwgen -s 1 1)* 2>/dev/null 	# .tar.gz
+tar -cjf $DIR4/"$(shuf -n 1 $RNAMES).tar.bz2" $DIR2/$(pwgen -s 1 1)* 2>/dev/null	# .tar.bz2
+tar -cJf $DIR4/"$(shuf -n 1 $RNAMES).tar.xz" $DIR2/$(pwgen -s 1 1)* 2>/dev/null	    # .tar.xz
 
 ## Topico 08 ##
 # Tarefas manuais
 
 ## Topico 09 ##
-
+# Tarefas manuais
 
 ## Topico 10 ##
+DIR5=$DIR1/permissions
+mkdir $DIR5 2>/dev/null
+for i in {1..9};do touch $DIR5/"$i-$(shuf -n 1 $RNAMES)"; done
 
+## Topico 11 ##
+# Tarefas manuais
+
+## Topico 12 ##
 
 ### Operation of Running Systems ###
 
