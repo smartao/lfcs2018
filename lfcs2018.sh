@@ -8,8 +8,8 @@ RNAMES="/usr/local/bin/random_users"
 ### Limpando diretorio /tmp ###
 rm -rf $DIR1/*
 
-### Criando usuario ###
-for i in bill angie barbie; do useradd $i -m -s /usr/sbin/nologin >/dev/null 2>&1;done
+### Criando usuarios ###
+for i in bill angie barbie junior; do useradd $i -m -s /bin/bash -p $(echo 123456 | openssl passwd -1 -stdin) >/dev/null 2>&1;done
 usermod -g lxd bill 2>/dev/null
 
 ### Essential Commands ###
