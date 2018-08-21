@@ -9,8 +9,9 @@ RNAMES="/usr/local/bin/random_users"
 rm -rf $DIR1/*
 
 ### Criando usuarios ###
-for i in bill angie barbie junior; do useradd $i -m -s /bin/bash -p $(echo 123456 | openssl passwd -1 -stdin) >/dev/null 2>&1;done
-usermod -g lxd bill 2>/dev/null
+SENHA="123456"
+for i in bill angie barbie junior; do useradd $i -m -s /bin/bash -p $(echo $SENHA | openssl passwd -1 -stdin) >/dev/null 2>&1;done
+usermod -aG lxd bill 2>/dev/null
 
 ### Essential Commands ###
 ## Topico 1 ##
