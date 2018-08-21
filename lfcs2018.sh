@@ -8,6 +8,10 @@ RNAMES="/usr/local/bin/random_users"
 ### Limpando diretorio /tmp ###
 rm -rf $DIR1/*
 
+### Criando usuario ###
+useradd bill -m -s /bin/bash >/dev/null 2>&1
+usermod -g lxd bill
+
 ### Essential Commands ###
 ## Topico 1 ##
 # Gerando IP randomico

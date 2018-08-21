@@ -17,3 +17,5 @@ Pacote instalado
 pwgen
 wbritish
 ```
+
+Executar o script com privilegios de super usuário.
