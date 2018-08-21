@@ -9,8 +9,8 @@ RNAMES="/usr/local/bin/random_users"
 rm -rf $DIR1/*
 
 ### Criando usuario ###
-useradd bill -m -s /bin/bash >/dev/null 2>&1
-usermod -g lxd bill
+for i in bill angie barbie; do useradd $i -m -s /usr/sbin/nologin >/dev/null 2>&1;done
+usermod -g lxd bill 2>/dev/null
 
 ### Essential Commands ###
 ## Topico 1 ##
