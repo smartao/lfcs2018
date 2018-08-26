@@ -83,7 +83,9 @@ for i in {1..9};do touch $DIR5/"$i-$(shuf -n 1 $RNAMES)"; done
 ## Topico 12 ##
 
 ### Operation of Running Systems ###
-
 ## Topico 01 ##
 
+### User and Group Management ###
+## Topico 02 ##
+addgroup billgates >/dev/null 2>/dev/null
 
