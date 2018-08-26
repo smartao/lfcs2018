@@ -28,10 +28,15 @@ for i in {1..200}; do mktemp -dqp $DIR2 XXXXXXX >/dev/null; for i in {1..20};do 
 for i in {1..5}; do fallocate -l 11000000 $(mktemp -qp $DIR2 XXXXXXXX.avi); for i in {1..50}; do fallocate -l 1100000 $(mktemp -qp $DIR2 XXXXXXXXX.jpg); done; done
 
 # Alterando data de alguns arquivos
+# Data de modificacao
 DATA1=20180401
 DATA2=20180701
 touch -d $DATA1 $DIR2/$(pwgen -s 1 1)*
 touch -d $DATA2 $DIR2/$(pwgen -s 1 1)*
+
+# Permissoes
+chmod 777  $DIR2/$(pwgen -s 1 1)*
+chmod 775  $DIR2/$(pwgen -s 1 1)*
 
 ## Topico 5 ##
 # Gerando script para redirecionar saida
