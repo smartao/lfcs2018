@@ -88,4 +88,5 @@ for i in {1..9};do touch $DIR5/"$i-$(shuf -n 1 $RNAMES)"; done
 ### User and Group Management ###
 ## Topico 02 ##
 addgroup billgates >/dev/null 2>/dev/null
-
+addgroup linuxnew >/dev/null 2>/dev/null
+usermod -aG linuxnew barbie >/dev/null 2>&1
