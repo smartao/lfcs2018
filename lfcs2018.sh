@@ -36,7 +36,7 @@ touch -d $DATA2 $DIR2/$(pwgen -s 1 1)*
 
 # Permissoes
 chmod 777  $DIR2/$(pwgen -s 1 1)*
-chmod 775  $DIR2/$(pwgen -s 1 1)*
+chmod 755  $DIR2/$(pwgen -s 1 1)*
 
 ## Topico 5 ##
 # Gerando script para redirecionar saida
