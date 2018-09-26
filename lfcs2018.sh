@@ -32,6 +32,11 @@ chmod u+s $DIR2/$(pwgen -s 1 1)*
 chmod g+s $DIR2/$(pwgen -s 1 1)*
 chmod u+s,g+s $DIR2/$(pwgen -s 1 1)*
 chmod +t $DIR2/$(pwgen -s 1 1)*
+chmod +t $DIR2/$(pwgen -s 1 1)*
+chown sergei. $DIR2/$(pwgen -s 1 1)*
+
+# Diretorio para mover os arquivos
+mkdir /tmp/new 2>/dev/null
 
 # Alterando data de alguns arquivos
 # Data de modificacao
