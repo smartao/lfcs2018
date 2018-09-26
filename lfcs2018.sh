@@ -2,7 +2,6 @@
 
 ##### Varivais #####
 DIR1="/tmp"
-DIR2="$DIR1/files"
 RNAMES="/usr/local/bin/random_users"
 
 ### Limpando diretorio /tmp ###
@@ -21,11 +20,18 @@ unset IP; for i in `seq 4`; do IP=$IP.$(od -An -N1 -i /dev/random); done ; echo 
 
 ## Topicos 2 e 4 ##
 # Criando arquivos e diretorios
+DIR2="$DIR1/files"
 mkdir $DIR2 2>/dev/null
 for i in {1..200}; do mktemp -dqp $DIR2 XXXXXXX >/dev/null; for i in {1..20};do mktemp -qp $DIR2 XXXXXXXXX >/dev/null;done; done
 
 # Criando arquivos maiores que 10M e 1M
 for i in {1..5}; do fallocate -l 11000000 $(mktemp -qp $DIR2 XXXXXXXX.avi); for i in {1..50}; do fallocate -l 1100000 $(mktemp -qp $DIR2 XXXXXXXXX.jpg); done; done
+
+# Permissoes especiais para pesquisa
+chmod u+s $DIR2/$(pwgen -s 1 1)*
+chmod g+s $DIR2/$(pwgen -s 1 1)*
+chmod u+s,g+s $DIR2/$(pwgen -s 1 1)*
+chmod +t $DIR2/$(pwgen -s 1 1)*
 
 # Alterando data de alguns arquivos
 # Data de modificacao
