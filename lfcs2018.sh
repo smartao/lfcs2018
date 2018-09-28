@@ -31,9 +31,11 @@ for i in {1..5}; do fallocate -l 11000000 $(mktemp -qp $DIR2 XXXXXXXX.avi); for 
 chmod u+s $DIR2/$(pwgen -s 1 1)*
 chmod g+s $DIR2/$(pwgen -s 1 1)*
 chmod u+s,g+s $DIR2/$(pwgen -s 1 1)*
+chmod g+s,+t $DIR2/$(pwgen -s 1 1)*
 chmod +t $DIR2/$(pwgen -s 1 1)*
-chmod +t $DIR2/$(pwgen -s 1 1)*
+chown sergei $DIR2/$(pwgen -s 1 1)*
 chown sergei. $DIR2/$(pwgen -s 1 1)*
+chown sergei:sudo $DIR2/$(pwgen -s 1 1)*
 
 # Diretorio para mover os arquivos
 mkdir /tmp/new 2>/dev/null
