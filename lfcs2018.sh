@@ -51,12 +51,28 @@ touch -d $DATA2 $DIR2/$(pwgen -s 1 1)*
 chmod 777  $DIR2/$(pwgen -s 1 1)*
 chmod 755  $DIR2/$(pwgen -s 1 1)*
 
+# Gerando arquivos para comparar
+DIR=/tmp/diff
+mkdir $DIR 2>/dev/null
+echo "Arquivo1 linha inicial
+LINHA2
+LINHA3
+
+Arquivo1 linha5" > $DIR/file1
+
+echo "arquivo2 linha inicial
+linha2
+linha3
+-
+arquivo2 linha5" > $DIR/file2
+
 ## Topico 5 ##
 # Gerando script para redirecionar saida
 echo "#!/bin/bash
 echo 'saida normal'
 ocorreu um erro" > $DIR1/scriptstd.sh
 chmod 755 $DIR1/scriptstd.sh
+echo "Linha original do arquivo" >> /tmp/arquivo
 
 ## Topico 6 e 2 ##
 # Copiando arquivos para pesquisa
