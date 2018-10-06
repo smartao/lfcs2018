@@ -84,9 +84,9 @@ cp /etc/group /tmp/
 # Gerando link para fazer pesquisa com o find
 DIR3=$DIR1/links
 mkdir $DIR3 2>/dev/null
-for i in {1..50}; do ln /tmp/passwd $DIR3/file$(shuf -i1-500 -n1) 2>/dev/null;done
-for i in {1..50}; do ln /tmp/group $DIR3/file$(shuf -i1-500 -n1) 2>/dev/null;done
-for i in {1..50}; do ln -s -f /tmp/passwd $DIR3/file$(shuf -i1-500 -n1) 2>/dev/null;done
+for i in {1..50}; do ln /tmp/passwd $DIR3/file$(shuf -i1-50000 -n1) 2>/dev/null;done
+for i in {1..50}; do ln /tmp/group $DIR3/file$(shuf -i1-50000 -n1) 2>/dev/null;done
+for i in {1..50}; do ln -s -f /tmp/passwd $DIR3/file$(shuf -i1-50000 -n1) 2>/dev/null;done
 
 ## Topico 07 ##
 # Compactando arquivos 
