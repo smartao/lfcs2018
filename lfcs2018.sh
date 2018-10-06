@@ -112,10 +112,15 @@ for i in {1..9};do touch $DIR5/"$i-$(shuf -n 1 $RNAMES)"; done
 ## Topico 12 ##
 
 ### Operation of Running Systems ###
-## Topico 01 ##
+## Topico 14 ##
+# Crinado binario para o apparmor
+cp /bin/ping /bin/ping-x >/dev/null 2>&1
 
 ### User and Group Management ###
 ## Topico 02 ##
+# Criando usuarios e grupuos
 addgroup billgates >/dev/null 2>/dev/null
 addgroup linuxnew >/dev/null 2>/dev/null
 usermod -aG linuxnew barbie >/dev/null 2>&1
+
+
