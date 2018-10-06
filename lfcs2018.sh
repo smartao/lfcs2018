@@ -5,7 +5,9 @@ DIR1="/tmp"
 RNAMES="/usr/local/bin/random_users"
 
 ### Limpando diretorio /tmp ###
-rm -rf $DIR1/*
+chattr -i /tmp/scriptstd.sh >/dev/null 2>&1
+chattr -a  /tmp/passwd >/dev/null 2>&1
+rm -rf $DIR1/* >/dev/null 2>&1
 
 ### Criando usuarios ###
 SENHA="123456"
@@ -82,9 +84,9 @@ cp /etc/group /tmp/
 # Gerando link para fazer pesquisa com o find
 DIR3=$DIR1/links
 mkdir $DIR3 2>/dev/null
-for i in {1..5}; do ln /tmp/passwd $DIR3/file$(shuf -i1-500 -n1) 2>/dev/null;done
-for i in {1..5}; do ln /tmp/group $DIR3/file$(shuf -i1-500 -n1) 2>/dev/null;done
-for i in {1..5}; do ln -s -f /tmp/passwd $DIR3/file$(shuf -i1-500 -n1) 2>/dev/null;done
+for i in {1..50}; do ln /tmp/passwd $DIR3/file$(shuf -i1-500 -n1) 2>/dev/null;done
+for i in {1..50}; do ln /tmp/group $DIR3/file$(shuf -i1-500 -n1) 2>/dev/null;done
+for i in {1..50}; do ln -s -f /tmp/passwd $DIR3/file$(shuf -i1-500 -n1) 2>/dev/null;done
 
 ## Topico 07 ##
 # Compactando arquivos 
@@ -105,6 +107,10 @@ tar -cJf $DIR4/"$(shuf -n 1 $RNAMES).tar.xz" $DIR2/$(pwgen -s 1 1)* 2>/dev/null	
 DIR5=$DIR1/permissions
 mkdir $DIR5 2>/dev/null
 for i in {1..9};do touch $DIR5/"$i-$(shuf -n 1 $RNAMES)"; done
+
+# Adicionado usuarios com permissoes de ACL
+setfacl -m u:bill:rwx /tmp/group
+setfacl -m d:u:junior:rwx /tmp/permissions/
 
 ## Topico 11 ##
 # Tarefas manuais
