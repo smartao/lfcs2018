@@ -129,4 +129,17 @@ addgroup billgates >/dev/null 2>/dev/null
 addgroup linuxnew >/dev/null 2>/dev/null
 usermod -aG linuxnew barbie >/dev/null 2>&1
 
+### Services Configuration ###
+## Topico 8 ##
+DIR="/var/sites"
+mkdir $DIR >>/dev/null 2>&1
+echo " 
+<!DOCTYPE html>
+<html>
+<body>
+Pagina HTML importante!
+</body>
+</html>
+" > $DIR/index.html
 
+#cp index.html $DIR 
