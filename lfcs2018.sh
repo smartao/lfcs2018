@@ -142,4 +142,12 @@ Pagina HTML importante!
 </html>
 " > $DIR/index.html
 
-#cp index.html $DIR 
+### Storage Management ###
+# Criando pastas para ponto de montagem
+mkdir /media/sda >>/dev/null 2>&1
+mkdir /media/sdb >>/dev/null 2>&1
+mkdir /media/sdc >>/dev/null 2>&1
+mkdir /media/lvm >>/dev/null 2>&1
+mkdir /media/hidden >>/dev/null 2>&1
+mkdir /media/raid >>/dev/null 2>&1
+mkdir /media/quota >>/dev/null 2>&1
